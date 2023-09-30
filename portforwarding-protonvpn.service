@@ -1,0 +1,13 @@
+[Unit]
+Description=Port forwarding script for Proton VPN
+Wants=[OpenVPN or Wireguard Config].service qbittorrent.service
+After=[OpenVPN or Wireguard Config].service qbittorrent.service
+StartLimitBurst=600
+
+[Service]
+ExecStart=/etc/[openvpn|wiregaurd]/portForwarding.sh
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

@@ -5,7 +5,7 @@ After=[OpenVPN or Wireguard Config].service qbittorrent.service
 StartLimitBurst=600
 
 [Service]
-ExecStart=/etc/[openvpn|wiregaurd]/portForwarding.sh
+ExecStart=/etc/[openvpn|wireguard]/portForwarding.sh
 Restart=always
 RestartSec=10
 
